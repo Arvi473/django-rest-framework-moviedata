@@ -1,0 +1,52 @@
+pip install djangorestframework
+
+cd drf
+
+django-admin startproject mysite
+
+cd mysite
+
+django-admin startapp movies
+
+python manage.py makemigrations
+Migrations for 'movies':
+  movies\migrations\0001_initial.py
+    - Create model Moviedata
+	
+python manage.py sqlmigrate movies 0001
+
+python manage.py migrate
+
+python manage.py createsuperuser
+Username (leave blank to use 'aravi'): aravin
+d
+Email address: aravind007santhosh@gmail.com
+Password:
+Password (again):
+Superuser created successfully.
+
+python manage.py runserver
+
+
+python manage.py makemigrations
+Migrations for 'movies':
+  movies\migrations\0002_moviedata_typ.py
+    - Add field typ to moviedata
+	
+	
+python manage.py sqlmigrate movies 0002
+
+
+python manage.py migrate
+
+python manage.py runserver
+
+
+
+python manage.py makemigrations
+Migrations for 'movies':
+  movies\migrations\0003_moviedata_image.py
+    - Add field image to moviedata
+
+	
+python manage.py migrate

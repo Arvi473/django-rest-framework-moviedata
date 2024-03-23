@@ -1,0 +1,26 @@
+from django.shortcuts import render
+from rest_framework import viewsets
+from .serializers import MovieSerializer
+from .models import Moviedata
+# Create your views here.
+
+class MovieViewSet(viewsets.ModelViewSet):
+    queryset = Moviedata.objects.all()
+    serializer_class = MovieSerializer
+
+
+class ActionViewSet(viewsets.ModelViewSet):
+    queryset = Moviedata.objects.filter(typ='action')
+    serializer_class = MovieSerializer
+
+class ComedyViewSet(viewsets.ModelViewSet):
+    queryset = Moviedata.objects.filter(typ='comedy')
+    serializer_class = MovieSerializer
+
+class ThrillerViewSet(viewsets.ModelViewSet):
+    queryset = Moviedata.objects.filter(typ='thriller')
+    serializer_class = MovieSerializer
+
+class HorrorViewSet(viewsets.ModelViewSet):
+    queryset = Moviedata.objects.filter(typ='horror')
+    serializer_class = MovieSerializer
